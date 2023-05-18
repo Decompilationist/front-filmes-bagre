@@ -19,7 +19,7 @@ function LoginForm() {
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Login</h3>
+          <h3 className="Auth-form-title">Entrar</h3>
           {loginResult != null && loginResult !== true && (
             <div className="d-grid mt-3">
               <Alert variant="danger">{loginResult}</Alert>

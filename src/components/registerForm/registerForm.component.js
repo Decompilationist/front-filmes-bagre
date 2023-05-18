@@ -30,10 +30,10 @@ function RegisterForm() {
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Register</h3>
+          <h3 className="Auth-form-title">Cadastrar</h3>
           {registerResult === true ? (
             <Alert variant="success">
-              Registation was successful. Please login.
+              Cadastrado com sucesso. Por favor, faça o login.
             </Alert>
           ) : (
             registerResult != null && (
@@ -41,34 +41,34 @@ function RegisterForm() {
             )
           )}
           <div className="form-group mt-3">
-            <label>First Name</label>
+            <label>Nome</label>
             <input
               className="form-control mt-1"
-              placeholder="Jane"
+              placeholder="Fulano"
               value={firstName || ""}
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">
-            <label>Last Name</label>
+            <label>Sobrenome</label>
             <input
               className="form-control mt-1"
-              placeholder="Doe"
+              placeholder="Santos"
               value={lastName || ""}
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">
-            <label>Address</label>
+            <label>Endereço</label>
             <input
               className="form-control mt-1"
-              placeholder="111 Real Street"
+              placeholder="371 Santo Amaro, São Paulo, SP"
               value={address || ""}
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">
-            <label>Credit Card</label>
+            <label>Cartão de Crédito</label>
             <input
               className="form-control mt-1"
               placeholder="1111 2222 3333 4444"
@@ -77,32 +77,32 @@ function RegisterForm() {
             />
           </div>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label>Endereço de E-mail</label>
             <input
               type="email"
               className="form-control mt-1"
-              placeholder="Email Address"
+              placeholder="fulano@gmail.com"
               value={email || ""}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label>Senha</label>
             <input
               type="password"
               className="form-control mt-1"
-              placeholder="Password"
+              placeholder="Ex. 12345678"
               value={password || ""}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
-              Submit
+              Enviar
             </button>
           </div>
           <div style={{ marginTop: "30px" }}>
-            Already have an account? <a href="/login">Login here</a>
+            Já possui uma conta? <a href="/login">Logue aqui</a>
           </div>
         </div>
       </form>
