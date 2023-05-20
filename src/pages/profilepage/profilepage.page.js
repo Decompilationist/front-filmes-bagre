@@ -4,7 +4,9 @@ import ProfileForm from '../../components/profileForm/profileForm.component';
 
 const ProfilePage = () =>{
     return (
-        <div>Profile page
+        
+        <div>
+            <h1 style={{textAlign: 'center'}}>Perfil</h1>
             <ProfileForm />
             
         </div>
