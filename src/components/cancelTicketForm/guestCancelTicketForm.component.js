@@ -42,7 +42,7 @@ export default function GuestCancelTicketForm() {
               onChange={(e) => setTicketId(e.target.value)}
             />
             <Button variant="primary" type="submit">
-              Get Ticket
+              Buscar ingresso
             </Button>
           </InputGroup>
         </Form>
