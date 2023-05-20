@@ -39,19 +39,19 @@ export default function SelectTheatre(props) {
 
   return (
     <div>
-      <Button onClick={handleShow}>Select Movie</Button>
+      <Button onClick={handleShow}>Escolha o filme</Button>
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{movie_details.movie_name}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <h3>Select Theatre: </h3>
+          <h3>Selecionar cinema: </h3>
             {data.map((m) => (
               <Accordion>
                 <Accordion.Item eventKey="0">
                 <Accordion.Header>{m.theatre_name}</Accordion.Header>
                 <Accordion.Body>
-                  <h4>Select Showtime:</h4>
+                  <h4>Selecione o horário de exibição:</h4>
                   <Row>
                     <Button variant="outline-secondary" value={m.showing_id} onClick={handleClick}>{m.show_time}</Button>
                   </Row>

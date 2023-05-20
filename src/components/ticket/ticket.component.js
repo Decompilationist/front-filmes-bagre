@@ -54,7 +54,7 @@ function Ticket(props) {
           Cost: $${cost}`}
         </Card.Text>
         {cancelResult === true ? (
-          <Alert variant="success">Ticket was cancelled succesfully.</Alert>
+          <Alert variant="success">Ingresso cancelado com sucesso.</Alert>
         ) : (
           cancelResult != null && <Alert variant="danger">{cancelResult}</Alert>
         )}
@@ -67,11 +67,11 @@ function Ticket(props) {
         </Button>
       </Card.Body>
       {is_credited === 1 && (
-        <Card.Footer className="text-danger">Ticket Cancelled</Card.Footer>
+        <Card.Footer className="text-danger">Ingresso cancelado</Card.Footer>
       )}
       {is_credited === 0 && !canCancel() && (
         <Card.Footer className="text-muted">
-          Ticket cannot be Cancelled within 72 Hours of Showing
+          O ingresso não pode ser cancelado dentro de 72 horas após a exibição
         </Card.Footer>
       )}
     </Card>

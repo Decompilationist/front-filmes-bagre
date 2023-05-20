@@ -68,35 +68,35 @@ export default function MembershipPaymentForm(props) {
 
     return (
         <div>
-            <Button variant="primary" onClick={handleShow}>Pay Membership Fee</Button>
+            <Button variant="primary" onClick={handleShow}>Pagar taxa de membro Bagre Movie</Button>
             <Modal show={showModal} onHide={handleClose} >
-                <Modal.Header>Payment</Modal.Header>
+                <Modal.Header>Pagamento</Modal.Header>
                 <Modal.Body>
                     {paymentSuccess === true ? (
                         <Alert variant="success">
-                            <Alert.Heading>Membership is Renewed!</Alert.Heading>
+                            <Alert.Heading>Membro Bagre Movie renovado!</Alert.Heading>
                                 <p>
-                                    You Membership is renewed until <b>{expirationDate}</b>.
+                                Sua associação é renovada até <b>{expirationDate}</b>.
                                 </p>
                                     <hr />
                                 <p>
-                                    Here is your receipt#: <b>{paymentConfirmation}</b>. 
+                                Aqui está o recibo#: <b>{paymentConfirmation}</b>. 
                                 </p>
                                 <hr />
                                 <div className="d-flex justify-content-end">
                                     <Button onClick={handleClose} variant="outline-success">
-                                        Return
+                                        Voltar
                                     </Button>
                                 </div>
                         </Alert>
                     ) : (paymentConfirmation && <Alert variant="danger">
-                            <Alert.Heading>Processing Error</Alert.Heading>
+                            <Alert.Heading>Erro ao efetuar pagamento</Alert.Heading>
                             <p>
                                 {paymentConfirmation}
                             </p>
                             <div className="d-flex justify-content-end">
                                 <Button onClick={handleClose} variant="outline-danger">
-                                    Return
+                                    Voltar
                                 </Button>
                             </div>
                         </Alert>
@@ -107,39 +107,39 @@ export default function MembershipPaymentForm(props) {
                     <Accordion defaultActiveKey={['0']}>
                     <Accordion.Item eventkey="0">
                             <Alert variant="info">
-                                <Alert.Heading>Checkout:</Alert.Heading>
+                                <Alert.Heading>Confira:</Alert.Heading>
                                     <p>
-                                        Total Cost is: <b>$20</b>.
+                                        O custo total é: <b>$20</b>.
                                     </p>
                                     <hr />
                             </Alert>          
                         </Accordion.Item>
                         <Accordion.Item eventkey="1">
-                                <Accordion.Header>Use Different Credit Card</Accordion.Header>
+                                <Accordion.Header>Use um cartão de crédito diferente</Accordion.Header>
                                 <Accordion.Body>
                                 <Form.Check
                                     
                                     type='checkbox'
-                                    label = 'Use Different Credit Card?'
+                                    label = 'Usar um cartão de crédito diferente?'
                                     onChange={(e) => setUseOtherCreditCard(e.target.checked)}
                                     />
                                     <Form onSubmit={handleSubmit}>
                                     <Row>
                                         <Form.Group as={Col} className="mb-3" controlId="fname">
-                                            <Form.Label>First Name:</Form.Label>
+                                            <Form.Label>Nome:</Form.Label>
                                             <Form.Control 
                                                 type="name" 
-                                                placeholder="First Name" 
+                                                placeholder="Nome" 
                                                 value={fname || ""} 
                                                 onChange={(e) => setFname(e.target.value)} 
                                                 required>
                                             </Form.Control>
                                         </Form.Group>
                                         <Form.Group as={Col} className="mb-3" controlId="lname">
-                                            <Form.Label>Last Name:</Form.Label>
+                                            <Form.Label>Sobrenome:</Form.Label>
                                             <Form.Control 
                                                 type="name" 
-                                                placeholder="Last Name" 
+                                                placeholder="Sobrenome" 
                                                 value={lname || ""} 
                                                 onChange={(e) => setLname(e.target.value)} 
                                                 required>
@@ -147,7 +147,7 @@ export default function MembershipPaymentForm(props) {
                                         </Form.Group>
                                     </Row>
                                     <Form.Group className="mb-3" controlId="credit_card_number">
-                                        <Form.Label>Enter Credit Card Number:</Form.Label>
+                                        <Form.Label>Digite o número do cartão de crédito:</Form.Label>
                                         <Form.Control 
                                             type="text" 
                                             pattern="^[0-9]+$" 
@@ -171,14 +171,14 @@ export default function MembershipPaymentForm(props) {
                         variant="secondary" 
                         type="reset" 
                         onClick={handleClose}>
-                            Cancel
+                            Cancelar
                     </Button>
                     <Button 
                         variant="primary" 
                         type="button" 
                         onClick={handleSubmit}
                         disabled={!payEnabled}>
-                            Pay
+                            Pagar
                     </Button>
                 </Modal.Footer>
             )}

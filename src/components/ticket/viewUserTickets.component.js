@@ -27,14 +27,14 @@ export default function viewUserTickets() {
           marginTop: "2rem",
         }}
       >
-        <h2 className="text-center">All Your Tickets are Listed below:</h2>
+        <h2 className="text-center">Todos os seus ingressos estão listados abaixo:</h2>
         {tickets == null ? (
           <Card>
-            <Card.Body>Loading...</Card.Body>
+            <Card.Body>Carregando...</Card.Body>
           </Card>
         ) : tickets.length === 0 ? (
           <Card>
-            <Card.Body>You have no tickets to display.</Card.Body>
+            <Card.Body>Você não possuí tickets a serem exibidos.</Card.Body>
           </Card>
         ) : (
           tickets.map((t) => {

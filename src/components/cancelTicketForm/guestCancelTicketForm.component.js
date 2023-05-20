@@ -32,12 +32,12 @@ export default function GuestCancelTicketForm() {
           marginTop: "2rem",
         }}
       >
-        <h2 className="text-center">Cancel a ticket</h2>
+        <h2 className="text-center">Cancelar um ingresso</h2>
         <Form onSubmit={handleSubmit}>
           <InputGroup className="m-2">
             <Form.Control
               type="text"
-              placeholder="Enter Ticket ID provided on receipt"
+              placeholder="Digite o ID do ingresso fornecido no recibo"
               value={ticketId || ""}
               onChange={(e) => setTicketId(e.target.value)}
             />
@@ -48,11 +48,11 @@ export default function GuestCancelTicketForm() {
         </Form>
         {ticket == null ? (
           <Card className="p-2 m-2">
-            <Card.Body>Please enter a valid ticket number.</Card.Body>
+            <Card.Body>Insira um número de bilhete válido.</Card.Body>
           </Card>
         ) : ticket.length === 0 ? (
           <Card className="p-2 m-2">
-            <Card.Body>Ticket not found.</Card.Body>
+            <Card.Body>Ingresso não encontrado.</Card.Body>
           </Card>
         ) : (
           <div>

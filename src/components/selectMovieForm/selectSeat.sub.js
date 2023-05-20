@@ -28,7 +28,7 @@ export default function SelectSeat(props) {
     }
 
     const handleClick = (e) => {
-        let confirmation = window.confirm([`Choose Seat ${e.target.name}`]);
+        let confirmation = window.confirm([`Escolha o assento ${e.target.name}`]);
         if(confirmation){
             props.onSeat(e.target.value);
             handleClose();
@@ -42,10 +42,10 @@ export default function SelectSeat(props) {
                 onHide={handleClose}
                 fullscreen
             >
-                <Modal.Header closeButton>Select Seat:</Modal.Header>
+                <Modal.Header closeButton>Selecionar assento:</Modal.Header>
                 <Modal.Body>
                     <Container>
-                        <div style={{textAlign: "center"}}>Section A</div>
+                        <div style={{textAlign: "center"}}>Sessão A</div>
                         <SeatsContainer>
                         {
                             seats.map((s) => (
@@ -59,8 +59,8 @@ export default function SelectSeat(props) {
                     
                         <SeatsContainer>
 
-                        <div style={{marginLeft: "10vw"}}>Section B</div>
-                        <div style={{marginRight: "10vw"}}>Section C</div>
+                        <div style={{marginLeft: "10vw"}}>Sessão B</div>
+                        <div style={{marginRight: "10vw"}}>Sessão C</div>
 
                         </SeatsContainer>
 
@@ -87,7 +87,7 @@ export default function SelectSeat(props) {
 
                         </SeatsContainer>
 
-                        <div style={{textAlign: "center"}}>Section D</div>
+                        <div style={{textAlign: "center"}}>Sessão D</div>
                         <SeatsContainer>
                         {
                             seats.map((s) => (
@@ -100,7 +100,7 @@ export default function SelectSeat(props) {
                         </SeatsContainer>
                     
                 
-                        <Screen>Screen</Screen>
+                        <Screen>Tela</Screen>
                     </Container>
                 </Modal.Body>
             </Modal>

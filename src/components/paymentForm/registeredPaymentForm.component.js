@@ -124,32 +124,32 @@ export default function RegisteredPaymentForm(props) {
 
     return (
         <div>
-            <Button variant="primary" onClick={handleShow}>Make Payment</Button>
+            <Button variant="primary" onClick={handleShow}>Efetuar pagamento</Button>
             <Modal show={showModal} onHide={handleClose} >
-                <Modal.Header>Payment</Modal.Header>
+                <Modal.Header>Pagamento</Modal.Header>
                 <Modal.Body>
                     {paymentSuccess === true ? (
                         <Alert variant="success">
-                            <Alert.Heading>Ticket Completed Successfully!</Alert.Heading>
+                            <Alert.Heading>Ingresso comprado com sucesso!</Alert.Heading>
                                 <p>
-                                    Here is your ticket id #: <b>{ticketConfirmation} </b>
-                                    an email has been sent with your receipt and ticket confirmation.
+                                Aqui está o ID do seu ingresso #: <b>{ticketConfirmation} </b>
+                                    Um email de confirmação foi enviado juntamente do recibo.
                                 </p>
                                 <hr />
                                 <div className="d-flex justify-content-end">
                                     <Button onClick={handleReturn} variant="outline-success">
-                                        Return
+                                        Voltar
                                     </Button>
                                 </div>
                         </Alert>
                     ) : (ticketConfirmation && <Alert variant="danger">
-                            <Alert.Heading>Processing Error</Alert.Heading>
+                            <Alert.Heading>Erro ao efetuar pagamento</Alert.Heading>
                             <p>
                                 {ticketConfirmation}
                             </p>
                             <div className="d-flex justify-content-end">
                                 <Button onClick={handleClose} variant="outline-danger">
-                                    Return
+                                    Voltar
                                 </Button>
                             </div>
                         </Alert>
@@ -160,14 +160,14 @@ export default function RegisteredPaymentForm(props) {
                     <Accordion defaultActiveKey={['0']}>
                     <Accordion.Item eventkey="0">
                             <Alert variant="info">
-                                <Alert.Heading>Checkout:</Alert.Heading>
+                                <Alert.Heading>Confira:</Alert.Heading>
                                     <p>
-                                        Total Cost is: <b>${seat_cost}</b>.
+                                        O custo total é: <b>${seat_cost}</b>.
                                     </p>
                                     <hr />
                             </Alert>
                         {userCredit[0]===true ? (
-                            <Alert variant={creditAlertState}>You have ${userCredit[1]} in credit
+                            <Alert variant={creditAlertState}>Você tem ${userCredit[1]} de crédito
                             <div className="d-grid gap-2">
                                 <ToggleButton
                                     className="mb-2"
@@ -178,38 +178,38 @@ export default function RegisteredPaymentForm(props) {
                                     value="1"
                                     disabled = {!enableCreditButton}
                                     onChange={(e) => setApplyRefund(e.currentTarget.checked)}>
-                                        Click to Apply Credit
+                                        Clique para aplicar crédito
                                 </ToggleButton>
                             </div>
                             </Alert>     
-                        ) : (!refund[0] && <Alert variant={creditAlertState}>Issue Retrieving Your Credit</Alert>)}            
+                        ) : (!refund[0] && <Alert variant={creditAlertState}>Problema ao recuperar seu crédito!</Alert>)}            
                         </Accordion.Item>
                         <Accordion.Item eventkey="1">
-                                <Accordion.Header>Use Different Credit Card</Accordion.Header>
+                                <Accordion.Header>Use um diferente cartão de crédito</Accordion.Header>
                                 <Accordion.Body>
                                 <Form.Check
                                     
                                     type='checkbox'
-                                    label = 'Use Different Credit Card?'
+                                    label = 'Usar um diferente cartão de crédito?'
                                     onChange={(e) => setUseOtherCreditCard(e.target.checked)}
                                     />
                                     <FormWrapper onSubmit={handleSubmit}>
                                     <Row>
                                         <Form.Group as={Col} className="mb-3" controlId="fname">
-                                            <Form.Label>First Name:</Form.Label>
+                                            <Form.Label>nome:</Form.Label>
                                             <Form.Control 
                                                 type="name" 
-                                                placeholder="First Name" 
+                                                placeholder="Nome" 
                                                 value={fname || ""} 
                                                 onChange={(e) => setFname(e.target.value)} 
                                                 required>
                                             </Form.Control>
                                         </Form.Group>
                                         <Form.Group as={Col} className="mb-3" controlId="lname">
-                                            <Form.Label>Last Name:</Form.Label>
+                                            <Form.Label>Sobrenome:</Form.Label>
                                             <Form.Control 
                                                 type="name" 
-                                                placeholder="Last Name" 
+                                                placeholder="Sobrenome" 
                                                 value={lname || ""} 
                                                 onChange={(e) => setLname(e.target.value)} 
                                                 required>
@@ -217,7 +217,7 @@ export default function RegisteredPaymentForm(props) {
                                         </Form.Group>
                                     </Row>
                                     <Form.Group className="mb-3" controlId="credit_card_number">
-                                        <Form.Label>Enter Credit Card Number:</Form.Label>
+                                        <Form.Label>Digite o número cartão de crédito:</Form.Label>
                                         <Form.Control 
                                             type="text" 
                                             pattern="^[0-9]+$" 
@@ -241,14 +241,14 @@ export default function RegisteredPaymentForm(props) {
                         variant="secondary" 
                         type="reset" 
                         onClick={handleClose}>
-                            Cancel
+                            Cancelar
                     </Button>
                     <Button 
                         variant="primary" 
                         type="button" 
                         onClick={handleSubmit}
                         disabled={!payEnabled}>
-                            Pay
+                            Pagar
                     </Button>
                 </Modal.Footer>
             )}

@@ -10,12 +10,12 @@ export default function MembershipExpiryForm(props) {
         <div>
             { expired ? (
                 <Alert variant='danger'>
-                    <Alert.Heading>Membership Fee is Expired!</Alert.Heading>
-                        Renewal date was {expirationDate}
+                    <Alert.Heading>A taxa de associação do Bagre Movies expirou!</Alert.Heading>
+                    A data de renovação foi {expirationDate}
                 </Alert> 
             ) : (
                 <Alert variant='info'>
-                    Renewal date for membership fee is: <b>{expirationDate}</b>.
+                    A data de renovação da taxa de adesão é: <b>{expirationDate}</b>.
                 </Alert> 
             )}
         </div>

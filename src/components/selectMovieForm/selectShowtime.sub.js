@@ -31,7 +31,7 @@ const SelectShowtime = ({prevStep, nextStep, handleChange, values}) =>{
                 <h1>Select Showtime</h1>
                 <Form>
                     <Form.Select onChange={handleChange('showtime')} defaultValue = {values.showtime}>
-                        <option value="">Open this select menu</option>
+                        <option value="">Abra este menu de seleção</option>
                         {data.showings.map((s) => (
                         <option value={s.showing_id}>{s.show_time}</option>
                         ))}
